@@ -1,4 +1,5 @@
 const WebSocket = require('ws');
+const _ = require('lodash');
 
 const wss = new WebSocket.Server({ port: 8989 });
 
@@ -13,7 +14,7 @@ const broadcast = (data, ws) => {
 };
 
 wss.on('connection', ws => {
-  ws.send(JSON.stringify({type: 'MESSAGE_HISTORY', previousMessages:messages}));
+  ws.send(JSON.stringify({type: 'MESSAGE_HISTORY', previousMessages:_.takeRight(messages, 10)}));
   ws.on('message', (message) => {
     const data = JSON.parse(message);
     switch (data.type) {
