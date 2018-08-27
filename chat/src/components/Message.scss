@@ -1,0 +1,17 @@
+.messageItem__content {
+  display: inline-block;
+  border: 1px solid #666;
+  border-radius: 4px;
+  padding: 4px;
+  margin: 6px;
+}
+
+.messageItem__author {
+  font-size: 16px;
+  margin: 4px;
+  font-weight: bold;
+}
+
+.messageItem__message {
+  margin: 4px;
+}
