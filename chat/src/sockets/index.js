@@ -1,5 +1,5 @@
-import *  as types from '../constants/ActionTypes'
-import { messageReceived, messageHistory } from '../actions'
+import *  as types from '../constants/ActionTypes';
+import { messageReceived, messageHistory } from '../actions';
 
 const setupSocket = dispatch => {
 	const socket = new WebSocket('ws://localhost:8989');
@@ -21,7 +21,7 @@ const setupSocket = dispatch => {
 				break
 		}
 	};
-	return socket
+	return socket;
 };
 
-export default setupSocket
+export default setupSocket;

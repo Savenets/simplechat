@@ -3,21 +3,18 @@ import PropTypes from 'prop-types';
 import Message from './Message';
 import { messageList } from './MessageList.scss';
 
-const MessagesList = ({ messages }) => {
-
-  return (
-    <section className={messageList}>
-      <ul>
-        {messages.map((message, index) => (
-          <Message
-            key={index}
-            {...message}
-          />
-        ))}
-      </ul>
-    </section>
-  )
-};
+const MessagesList = ({ messages }) => (
+  <section className={messageList}>
+    <ul>
+      {messages.map((message, index) => (
+        <Message
+          key={index}
+          {...message}
+        />
+      ))}
+    </ul>
+  </section>
+);
 
 MessagesList.PropTypes = {
 	messages: PropTypes.arrayOf(
